@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fraud-transaction-detection"
+version = "0.1.0"
+description = "Reproducible fraud detection on the PaySim transaction dataset"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "joblib>=1.4,<2",
+  "kagglehub>=0.3,<1",
+  "matplotlib>=3.9,<4",
+  "numpy>=2.0,<3",
+  "pandas>=2.2,<3",
+  "scikit-learn>=1.5,<2",
+  "tabulate>=0.9,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ipykernel>=6.29,<7",
+  "pytest>=8.3,<9",
+  "ruff>=0.9,<1",
+]
+
+[project.scripts]
+fraud-download = "fraud_detection.download:main"
+fraud-train = "fraud_detection.train:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fraud_detection"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

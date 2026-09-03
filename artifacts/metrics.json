@@ -1,0 +1,78 @@
+{
+  "generated_at_utc": "2026-09-03T11:16:05.137594+00:00",
+  "dataset": {
+    "rows": 6362620,
+    "fraud_count": 8213,
+    "fraud_prevalence": 0.001290820448180152,
+    "time_steps": 743
+  },
+  "split": {
+    "train_end_step": 520,
+    "validation_end_step": 631,
+    "train_rows": 6082007,
+    "validation_rows": 191147,
+    "test_rows": 89466,
+    "sampled_training_rows": 1000000,
+    "test_fraud_count": 1252
+  },
+  "features": [
+    "step",
+    "hour",
+    "day",
+    "log_amount",
+    "log_oldbalance_org",
+    "log_oldbalance_dest",
+    "type_cash_in",
+    "type_cash_out",
+    "type_debit",
+    "type_payment",
+    "type_transfer"
+  ],
+  "models": {
+    "business_rule": {
+      "threshold": 0.5,
+      "roc_auc": 0.5027955271565495,
+      "average_precision": 0.019506955325774247,
+      "precision": 1.0,
+      "recall": 0.005591054313099041,
+      "f1": 0.011119936457505957,
+      "f2": 0.006979062811565304,
+      "balanced_accuracy": 0.5027955271565495,
+      "accuracy": 0.9860840989873247,
+      "true_negatives": 88214,
+      "false_positives": 0,
+      "false_negatives": 1245,
+      "true_positives": 7
+    },
+    "logistic_regression": {
+      "threshold": 0.06071268022060394,
+      "roc_auc": 0.9700155584832151,
+      "average_precision": 0.6585007048599768,
+      "precision": 0.5329301075268817,
+      "recall": 0.6333865814696485,
+      "f1": 0.5788321167883211,
+      "f2": 0.6103756157635468,
+      "balanced_accuracy": 0.8127540067209489,
+      "accuracy": 0.9871012451657613,
+      "true_negatives": 87519,
+      "false_positives": 695,
+      "false_negatives": 459,
+      "true_positives": 793
+    },
+    "hist_gradient_boosting": {
+      "threshold": 0.38014353799344136,
+      "roc_auc": 0.9986610988700075,
+      "average_precision": 0.9330934070439093,
+      "precision": 0.823088455772114,
+      "recall": 0.8769968051118211,
+      "f1": 0.8491879350348028,
+      "f2": 0.8656575212866604,
+      "balanced_accuracy": 0.9371607464015586,
+      "accuracy": 0.995640802092415,
+      "true_negatives": 87978,
+      "false_positives": 236,
+      "false_negatives": 154,
+      "true_positives": 1098
+    }
+  }
+}

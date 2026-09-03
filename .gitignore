@@ -1,2 +1,25 @@
-# CSV Files
-*.csv
+# Data and trained models
+data/*
+!data/.gitkeep
+artifacts/models/*
+!artifacts/models/.gitkeep
+
+# Python
+.venv/
+.uv-cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
